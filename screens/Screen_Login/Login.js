@@ -1,0 +1,98 @@
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Touchable,
+  Button,
+  Image,
+  StatusBar,
+  ImageBackground,
+} from "react-native";
+
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        <StatusBar translucent></StatusBar>
+        <Image
+          source={{
+            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT25W6lDJEms-s6Tn8xhccxXFUtlzJNTBuCp-ESwpmIVpyyq8&s",
+          }}
+          style={styles.Image}
+        />
+        <Text style={{ fontSize: 30, color: "white", textAlign: "center" }}>
+          Welcome
+        </Text>
+        <View style={styles.box}>
+          <View style={styles.searchInputContainer}>
+            <TextInput placeholder="Your ID..."></TextInput>
+          </View>
+          <View style={styles.searchInputContainer}>
+            <TextInput placeholder="Your password..."></TextInput>
+          </View>
+        </View>
+        <View style={styles.box2}>
+          <TouchableOpacity style={styles.textlogin}>
+            <Text style={{ color: "white" }}>Login</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.textRegister}>
+            <Text style={{ color: "white" }}>Register</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+}
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#42275a",
+    width: "100%",
+    height: "100%",
+  },
+  Image: {
+    height: 300,
+    borderBottomLeftRadius: 100,
+  },
+  box: {
+    flex: 1,
+    alignItems: "center",
+    marginTop: 30,
+  },
+  searchInputContainer: {
+    width: "75%",
+    backgroundColor: "white",
+    alignContent: "center",
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginTop: 20,
+    height:'15%',
+  },
+  box2: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  textRegister: {
+    borderRadius: 10,
+    alignItems: "center",
+    height: 50,
+    backgroundColor: "black",
+    width: 100,
+    justifyContent:'center'
+  },
+  textlogin: {
+    borderRadius: 10,
+    alignItems: "center",
+    height: 50,
+    backgroundColor: "black",
+    width: 100,
+    justifyContent:'center'
+  },
+});

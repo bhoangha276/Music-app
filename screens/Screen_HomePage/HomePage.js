@@ -12,18 +12,18 @@ import {
   ImageBackground,
 } from "react-native";
 
+
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <View style={styles.container}>
         <StatusBar translucent> </StatusBar>
         <View style={styles.header}>
           <View>
-            <Text style={{ color: "white", fontSize: 20 }}>Cat</Text>
+            <Text style={{ color: "purple", fontSize: 20 }}>Cat</Text>
             <Text style={{ color: "white", fontSize: 30, fontWeight: "bold" }}>
               Music
             </Text>
@@ -81,7 +81,7 @@ export default class HomePage extends Component {
                 width: "45%",
                 marginTop: 15,
                 borderRadius: 10,
-                marginLeft:5,
+                marginLeft: 5,
               }}
             ></Image>
             <Image
@@ -99,7 +99,7 @@ export default class HomePage extends Component {
             <Text style={styles.title}>Songs</Text>
           </TouchableOpacity>
           <View style={styles.songs}>
-            <View>
+            <View style={styles.song}>
               <Image
                 source={require("../Screen_HomePage/Image/sontung.jpg")}
                 style={{
@@ -109,55 +109,77 @@ export default class HomePage extends Component {
                   borderRadius: 10,
                 }}
               ></Image>
+              <View style={styles.textSong}>
+                <Text style={{ color: "white" }}>Author: Sơn Tùng MTP</Text>
+                <Text style={{ color: "white" }}>
+                  Song: Muộn rồi mà sao còn
+                </Text>
+              </View>
             </View>
-            <View>
+            <View style={styles.song}>
               <Image
-                source={require("../Screen_HomePage/Image/Chillout.png")}
+                source={require("../Screen_HomePage/Image/level.jpg")}
                 style={{
-                  height: 100,
-                  width: "45%",
+                  height: 150,
+                  width: "50%",
                   marginTop: 15,
                   borderRadius: 10,
                 }}
               ></Image>
+              <View style={styles.textSong}>
+                <Text style={{ color: "white" }}>Author: Avicii</Text>
+                <Text style={{ color: "white" }}>Song: Levels</Text>
+              </View>
             </View>
-            <View>
+            <View style={styles.song}>
               <Image
-                source={require("../Screen_HomePage/Image/Chillout.png")}
+                source={require("../Screen_HomePage/Image/coemcho.jpg")}
                 style={{
-                  height: 100,
-                  width: "45%",
+                  height: 150,
+                  width: "50%",
                   marginTop: 15,
                   borderRadius: 10,
                 }}
               ></Image>
+              <View style={styles.textSong}>
+                <Text style={{ color: "white" }}>Author: MIN</Text>
+                <Text style={{ color: "white" }}>Song: Có em chờ</Text>
+              </View>
             </View>
           </View>
           <TouchableOpacity>
             <Text style={styles.title}>MVs</Text>
           </TouchableOpacity>
-          <View style={styles.categories}>
+          <View style={styles.mvs}>
             <Image
-              source={require("../Screen_HomePage/Image/popmusic.jpg")}
+              source={require("../Screen_HomePage/Image/talk.jpg")}
               style={{
                 height: 100,
                 width: "45%",
-                marginTop: 15,
                 borderRadius: 10,
-                marginLeft:5,
+                marginLeft: 5,
               }}
             ></Image>
             <Image
-              source={require("../Screen_HomePage/Image/Chillout.png")}
+              source={require("../Screen_HomePage/Image/vu.jpg")}
               style={{
                 height: 100,
                 width: "45%",
-                marginTop: 15,
                 borderRadius: 10,
                 marginRight: 10,
               }}
             ></Image>
           </View>
+          {/* <View style={styles.bottom}>
+            <TouchableOpacity style={{justifyContent:'center'}}>
+             
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.circle}>
+            </TouchableOpacity>
+            <TouchableOpacity style={{justifyContent:'center'}}>
+             
+            </TouchableOpacity>
+          </View> */}
         </ScrollView>
       </View>
     );
@@ -177,7 +199,7 @@ var styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 20,
     marginTop: 10,
-    backgroundColor:'black',
+    backgroundColor: "black",
   },
   ProfileImage: {
     width: 50,
@@ -193,7 +215,7 @@ var styles = StyleSheet.create({
     alignContent: "center",
     paddingHorizontal: 20,
     borderRadius: 20,
-    marginTop:20,
+    marginTop: 20,
   },
   sortBtn: {
     backgroundColor: "white",
@@ -203,7 +225,7 @@ var styles = StyleSheet.create({
     marginLeft: 10,
     justifyContent: "center",
     alignContent: "center",
-    marginTop:20,
+    marginTop: 20,
   },
   textPlaynow: {
     position: "absolute",
@@ -229,7 +251,35 @@ var styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 5,
   },
-  songs:{
-    marginLeft:10,
+  songs: {
+    marginLeft: 10,
+  },
+  song: {
+    flex: 1,
+    flexDirection: "row",
+  },
+  textSong: {
+    width: "50%",
+    marginLeft: 5,
+    marginTop: 10,
+    justifyContent: "center",
+  },
+  mvs: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+  bottom: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  circle:{
+    backgroundColor:'white',
+    borderRadius:20,
+    width:40,
+    height:40,
+    marginBottom:5,
   }
 });

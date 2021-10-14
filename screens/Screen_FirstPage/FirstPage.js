@@ -19,7 +19,6 @@ export default class FirstPage extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <StatusBar translucent></StatusBar>
         <Image
           source={{
             uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT25W6lDJEms-s6Tn8xhccxXFUtlzJNTBuCp-ESwpmIVpyyq8&s",
@@ -31,11 +30,11 @@ export default class FirstPage extends Component {
           <View style={styles.indicator}></View>
           <View style={[styles.indicator, styles.indicatorActive]}></View>
         </View>
-        <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
+        <View style={{ paddingHorizontal: 20, paddingTop: 10 }}>
           <Text style={styles.title}>Find your</Text>
           <Text style={styles.title}>own Music</Text>
         </View>
-        <View style={{ marginTop: 10 }}>
+        <View style={{ marginTop: 5 }}>
           <Text style={styles.textStyles}>
             Listen your music in just a few clicks
           </Text>
