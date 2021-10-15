@@ -1,69 +1,29 @@
 import React, {Component} from 'react';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Icon2 from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Home from '../Screens/Home';
-import Discover from '../Screens/Discover';
-import Profile from '../Screens/Profile';
+import HomePage from '../../screens/Screen_HomePage/HomePage.js';
+import Person from '../../screens/Screen_Person/Person.js';
+import ListSong from '../../screens/Screen_ListSong/index';
 
 const Tab = createBottomTabNavigator();
 
 function Tabs() {
     return (
-      <Tab.Navigator
-        initialRouteName="Home"
-        tabBarOptions={{
-          inactiveTintColor: 'gray',
-          activeTintColor: '#ff5b77',
-          showLabel: false,
-          tabStyle: {
-            backgroundColor: '#fff',
-            height: 60,
-            paddingBottom: 12,
-          },
-        }}>
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            tabBarIcon: ({focused, color}) => (
-              <Icon
-                name={focused ? 'home' : 'home-outline'}
-                size={28}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Discover"
-          component={Discover}
-          options={{
-            tabBarIcon: ({focused, color}) => (
-              <Icon
-                name={focused ? 'compass' : 'compass-outline'}
-                size={28}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={Profile}
-          options={{
-            tabBarIcon: ({focused, color}) => (
-              <Icon
-                name={focused ? 'account' : 'account-outline'}
-                size={28}
-                color={color}
-              />
-            ),
-          }}
-        />
+      <Tab.Navigator>
+          {}
+          <Tab.Screen name={"Home"} component={HomePage}></Tab.Screen>
+          <Tab.Screen name={"ListSong"} component={ListSong}></Tab.Screen>
+          <Tab.Screen name={"Person"} component={Person}></Tab.Screen>
       </Tab.Navigator>
     );
   }
   
+  // function Play() {
+  //   return (
+  //     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+  //       <Text>Play</Text>
+  //     </View>
+  //   );
+  // }
+
   export default Tabs;
