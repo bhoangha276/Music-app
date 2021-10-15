@@ -145,7 +145,6 @@ var styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     paddingHorizontal: 20,
-    marginTop: 10,
     backgroundColor: "black",
   },
   ProfileImage: {
