@@ -10,13 +10,56 @@ import {
   Image,
   ScrollView,
   ImageBackground,
+  FlatList,
 } from "react-native";
 
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: [
+          { id: 1, name: 'music 1', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB6nRuFhxJbvSMfBLZAdZGIZWUEbUVWdPN4z2oFCdltF4ozhq_&s' },
+          { id: 2, name: 'music 2', image: 'https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE' },
+          { id: 3, name: 'music 3', image: 'https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg' },
+          { id: 4, name: 'music 4', image: 'https://images.saymedia-content.com/.image/t_share/MTc4NzcyMTMzODg1NzgxNTEx/10-reasons-why-i-love-music.jpg' },
+          { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
+  
+      ]
+    }
   }
+  renderCategories({item}) {
+    return(
+      <View style={styles.categories}>
+      <Image
+        source={{ uri: item.image}}
+        style={{
+          height: '100%',
+          width: "100%",
+          borderRadius: 10,
+        }}
+      ></Image>
+      
+    </View>
+    )
+  }
+
+  renderMVs({item}) {
+    return(
+      <View style={styles.mvs}>
+            <Image
+              source={{ uri: item.image}}
+              style={{
+                height: '100%',
+                width: "100%",
+                borderRadius: 10,
+              }}
+            ></Image>
+            
+          </View>
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -73,28 +116,12 @@ export default class HomePage extends Component {
           <TouchableOpacity>
             <Text style={styles.title}>Categories</Text>
           </TouchableOpacity>
-          <View style={styles.categories}>
-            <Image
-              source={require("../Screen_HomePage/Image/popmusic.jpg")}
-              style={{
-                height: 100,
-                width: "45%",
-                marginTop: 15,
-                borderRadius: 10,
-                marginLeft: 5,
-              }}
-            ></Image>
-            <Image
-              source={require("../Screen_HomePage/Image/Chillout.png")}
-              style={{
-                height: 100,
-                width: "45%",
-                marginTop: 15,
-                borderRadius: 10,
-                marginRight: 10,
-              }}
-            ></Image>
-          </View>
+          <FlatList
+                        data={this.state.data}
+                        renderItem={this.renderCategories} 
+                        keyExtractor={item => item.id}
+                        horizontal={true}
+                    />
           <TouchableOpacity>
             <Text style={styles.title}>Songs</Text>
           </TouchableOpacity>
@@ -150,26 +177,12 @@ export default class HomePage extends Component {
           <TouchableOpacity>
             <Text style={styles.title}>MVs</Text>
           </TouchableOpacity>
-          <View style={styles.mvs}>
-            <Image
-              source={require("../Screen_HomePage/Image/talk.jpg")}
-              style={{
-                height: 100,
-                width: "45%",
-                borderRadius: 10,
-                marginLeft: 5,
-              }}
-            ></Image>
-            <Image
-              source={require("../Screen_HomePage/Image/vu.jpg")}
-              style={{
-                height: 100,
-                width: "45%",
-                borderRadius: 10,
-                marginRight: 10,
-              }}
-            ></Image>
-          </View>
+          <FlatList
+                        data={this.state.data}
+                        renderItem={this.renderMVs} 
+                        keyExtractor={item => item.id}
+                        horizontal={true}
+                    />
           {/* <View style={styles.bottom}>
             <TouchableOpacity style={{justifyContent:'center'}}>
              
@@ -180,6 +193,7 @@ export default class HomePage extends Component {
              
             </TouchableOpacity>
           </View> */}
+          <View style={{ height:100 }}></View>
         </ScrollView>
       </View>
     );
@@ -245,10 +259,13 @@ var styles = StyleSheet.create({
     marginLeft: 10,
   },
   categories: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    width:200,
+    height:120,
+    // flex: 1,
+    // flexDirection: "row",
+    // justifyContent: "space-between",
     marginTop: 5,
+    paddingLeft: 12,
   },
   songs: {
     marginLeft: 10,
@@ -264,10 +281,13 @@ var styles = StyleSheet.create({
     justifyContent: "center",
   },
   mvs: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 10,
+    width:200,
+    height:120,
+    // flex: 1,
+    // flexDirection: "row",
+    // justifyContent: "space-between",
+    marginTop: 5,
+    paddingLeft: 12,
   },
   bottom: {
     flex: 1,
