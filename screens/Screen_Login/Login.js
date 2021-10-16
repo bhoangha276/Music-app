@@ -34,13 +34,11 @@ export default class Login extends Component {
     }
   };
   onLogin = () => {
-    if (this.state.id == "ha" && this.state.password == "123") 
-    {
-      alert('Success!');
-      this.setState({noti: "",});
+    if (this.state.id == "ha" && this.state.password == "123") {
+      alert("Success!");
+      this.setState({ noti: "" });
       this.props.navigation.navigate("FirstPage");
-    } 
-    else {
+    } else {
       this.setState({
         noti: "id and passwrord incorret ",
       });
@@ -62,10 +60,17 @@ export default class Login extends Component {
         </Text>
         <View style={styles.box}>
           <View style={styles.searchInputContainer}>
-            <TextInput placeholder="Your ID..." onChangeText={(id) => this.setState({ id })}></TextInput>
+            <TextInput
+              placeholder="Your ID..."
+              onChangeText={(id) => this.setState({ id })}
+            ></TextInput>
           </View>
           <View style={styles.searchInputContainer}>
-            <TextInput placeholder="Your password..." secureTextEntry={this.state.showPass} onChangeText={(password) => this.setState({ password })}></TextInput>
+            <TextInput
+              placeholder="Your password..."
+              secureTextEntry={this.state.showPass}
+              onChangeText={(password) => this.setState({ password })}
+            ></TextInput>
           </View>
           <TouchableOpacity
             style={styles.btnEye}
@@ -80,7 +85,10 @@ export default class Login extends Component {
           </TouchableOpacity>
         </View>
         <View style={styles.box2}>
-          <TouchableOpacity style={styles.textlogin} onPress={() => this.onLogin()}>
+          <TouchableOpacity
+            style={styles.textlogin}
+            onPress={() => this.onLogin()}
+          >
             <Text style={{ color: "white" }}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.textRegister}>
@@ -114,12 +122,12 @@ var styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 5,
     marginTop: 20,
-    height:'15%',
+    height: "15%",
   },
   btnEye: {
     position: "absolute",
-    top: 64,
-    right: 60,
+    marginTop: 70,
+    paddingLeft: 250,
   },
   box2: {
     flex: 1,
@@ -132,7 +140,7 @@ var styles = StyleSheet.create({
     height: 50,
     backgroundColor: "black",
     width: 100,
-    justifyContent:'center'
+    justifyContent: "center",
   },
   textlogin: {
     borderRadius: 10,
@@ -140,6 +148,6 @@ var styles = StyleSheet.create({
     height: 50,
     backgroundColor: "black",
     width: 100,
-    justifyContent:'center'
+    justifyContent: "center",
   },
 });
