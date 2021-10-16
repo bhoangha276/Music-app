@@ -76,7 +76,7 @@ export default class HomePage extends Component {
             style={styles.ProfileImage}
           ></Image>
         </View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View
             style={{
               flexDirection: "row",
@@ -113,7 +113,7 @@ export default class HomePage extends Component {
               <Text>Play now</Text>
             </TouchableOpacity>
           </ImageBackground>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("Categories")}>
             <Text style={styles.title}>Categories</Text>
           </TouchableOpacity>
           <FlatList
@@ -121,8 +121,9 @@ export default class HomePage extends Component {
                         renderItem={this.renderCategories} 
                         keyExtractor={item => item.id}
                         horizontal={true}
+                        showsHorizontalScrollIndicator={false}
                     />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("ListSong")}>
             <Text style={styles.title}>Songs</Text>
           </TouchableOpacity>
           <View style={styles.songs}>
@@ -174,7 +175,7 @@ export default class HomePage extends Component {
               </View>
             </View>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("ListMV")}>
             <Text style={styles.title}>MVs</Text>
           </TouchableOpacity>
           <FlatList
@@ -182,6 +183,7 @@ export default class HomePage extends Component {
                         renderItem={this.renderMVs} 
                         keyExtractor={item => item.id}
                         horizontal={true}
+                        showsHorizontalScrollIndicator={false}
                     />
           {/* <View style={styles.bottom}>
             <TouchableOpacity style={{justifyContent:'center'}}>

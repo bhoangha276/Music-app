@@ -82,7 +82,7 @@ export default class MusicList extends Component {
         // ))
 
         return(
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <View style = {StyleSheet.banner}>
                         <TouchableOpacity style={styles.buttonBack}>
@@ -100,21 +100,21 @@ export default class MusicList extends Component {
                     <View style={styles.list}>
                     {/* {renderButton} */}
                         <Text style={styles.titleMV}>Top MV</Text>
-                        <FlatList
+                        <FlatList style={styles.flatList}
                             data={this.state.data}
                             renderItem={this.renderItem} 
                             keyExtractor={item => item.id}
-                            // numColumns={2}
                             horizontal={true}
+                            showsHorizontalScrollIndicator={false}
                         />
 
                         <Text style={styles.titleMV}>New</Text>
-                        <FlatList
+                        <FlatList style={styles.flatList}
                             data={this.state.data}
                             renderItem={this.renderItem} 
                             keyExtractor={item => item.id}
-                            // numColumns={2}
                             horizontal={true}
+                            showsHorizontalScrollIndicator={false}
                         />
 
                         <Text style={styles.titleMV}>For you</Text>
@@ -211,7 +211,7 @@ var styles = StyleSheet.create({
         // backgroundColor: '#FF6600',
 
         width: '100%',
-
+        height: '100%',
         paddingLeft:10,
 
         // justifyContent: 'center',
@@ -224,9 +224,10 @@ var styles = StyleSheet.create({
         
     },
     buttonListTextSingle: {
-        color: 'white',
-
-        
+        color: 'white',  
+    },
+    flatList:{
+        height:50,
     },
     buttonListP: {
         // backgroundColor: '#99CCFF',
@@ -245,4 +246,5 @@ var styles = StyleSheet.create({
         // display: 'flex',
         // flexDirection:'row',
     },
+
 })

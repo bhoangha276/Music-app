@@ -134,6 +134,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Tabs from '../../App/Config/router';
+import ListSong from '../Screen_ListSong/index';
+import Categories from '../Screen_Categories/index';
+import ListMV from '../Screen_ListMV/index';
 
 class FirstPage extends Component {
   constructor(props) {
@@ -184,7 +187,7 @@ class FirstPage extends Component {
   }
 }
 
-export default MainScreen;
+
 
 // const Stack = createStackNavigator();
 const Stack = createNativeStackNavigator();
@@ -206,11 +209,32 @@ function Stacks() {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="ListSong"
+        component={ListSong}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Categories"
+        component={Categories}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ListMV"
+        component={ListMV}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }
 
-function MainScreen() {
+export default function MainScreen() {
   return (
     <NavigationContainer>
       <Stacks />

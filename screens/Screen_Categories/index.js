@@ -52,7 +52,7 @@ export default class Categories extends Component {
         
 
         return(
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <View style = {StyleSheet.banner}>
                         <TouchableOpacity style={styles.buttonBack}>
