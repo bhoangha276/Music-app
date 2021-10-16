@@ -85,7 +85,7 @@ export default class MusicList extends Component {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <View style = {StyleSheet.banner}>
-                        <TouchableOpacity style={styles.buttonBack}>
+                        <TouchableOpacity style={styles.buttonBack} onPress={() => this.props.navigation.goBack()}>
                             <Text style={styles.buttonBackText}>← Back</Text>
                         </TouchableOpacity>
                         <Image source={{uri: 'https://vtv1.mediacdn.vn/thumb_w/650/2020/7/3/1061332173675372452476431818456362453126714o-1593780823287457624164-crop-1593780866985947628599.jpg'}} style={{width: 420, height: 370}} />

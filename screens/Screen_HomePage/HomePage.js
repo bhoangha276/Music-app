@@ -113,7 +113,7 @@ export default class HomePage extends Component {
               <Text>Play now</Text>
             </TouchableOpacity>
           </ImageBackground>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("Categories")}>
+          <TouchableOpacity onPress={() => this.props.navigation.push("Categories")}>
             <Text style={styles.title}>Categories</Text>
           </TouchableOpacity>
           <FlatList
@@ -123,7 +123,7 @@ export default class HomePage extends Component {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                     />
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("ListSong")}>
+          <TouchableOpacity onPress={() => this.props.navigation.push("ListSong")}>
             <Text style={styles.title}>Songs</Text>
           </TouchableOpacity>
           <View style={styles.songs}>
@@ -175,7 +175,7 @@ export default class HomePage extends Component {
               </View>
             </View>
           </View>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("ListMV")}>
+          <TouchableOpacity onPress={() => this.props.navigation.push("ListMV")}>
             <Text style={styles.title}>MVs</Text>
           </TouchableOpacity>
           <FlatList
