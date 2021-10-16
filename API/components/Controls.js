@@ -14,7 +14,7 @@ export default function Controls({ togglePlayPauseBtn, pause, playNextSong,playP
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={playNextSong} >
-        <AntDesign name="banckward" size={30} color="white"></AntDesign>
+        <AntDesign name="stepbackward" size={30} color="white"></AntDesign>
       </TouchableOpacity>
 
       {pause ? (
@@ -28,7 +28,7 @@ export default function Controls({ togglePlayPauseBtn, pause, playNextSong,playP
       )}
 
       <TouchableOpacity onPress={playPrevSong} >
-        <AntDesign name="forward" size={30} color="white"></AntDesign>
+        <AntDesign name="stepforward" size={30} color="white"></AntDesign>
       </TouchableOpacity>
     </View>
   );
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
+marginBottom:120,
   },
   playPauseBtn: {
     width: 120,
