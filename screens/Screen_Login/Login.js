@@ -11,6 +11,8 @@ import {
   StatusBar,
   ImageBackground,
 } from "react-native";
+import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 export default class Login extends Component {
   constructor(props) {
@@ -63,8 +65,19 @@ export default class Login extends Component {
             <TextInput placeholder="Your ID..." onChangeText={(id) => this.setState({ id })}></TextInput>
           </View>
           <View style={styles.searchInputContainer}>
-            <TextInput placeholder="Your password..."  onChangeText={(password) => this.setState({ password })}></TextInput>
+            <TextInput placeholder="Your password..." secureTextEntry={this.state.showPass} onChangeText={(password) => this.setState({ password })}></TextInput>
           </View>
+          <TouchableOpacity
+            style={styles.btnEye}
+            onPress={this.showPass.bind(this)}
+          >
+            <AntDesign
+              name={this.state.press == false ? "eyeo" : "eye"}
+              size={24}
+              color="#3366FF"
+              style={styles.eye}
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.box2}>
           <TouchableOpacity style={styles.textlogin} onPress={() => this.onLogin()}>
@@ -102,6 +115,11 @@ var styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 20,
     height:'15%',
+  },
+  btnEye: {
+    position: "absolute",
+    top: 64,
+    right: 60,
   },
   box2: {
     flex: 1,
