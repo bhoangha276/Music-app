@@ -137,6 +137,7 @@ import Tabs from '../../App/Config/router';
 import ListSong from '../Screen_ListSong/index';
 import Categories from '../Screen_Categories/index';
 import ListMV from '../Screen_ListMV/index';
+import PlayMV from '../Screen_PlayMV/PlayMV';
 
 class FirstPage extends Component {
   constructor(props) {
@@ -226,6 +227,13 @@ function Stacks() {
       <Stack.Screen
         name="ListMV"
         component={ListMV}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="PlayMV"
+        component={PlayMV}
         options={{
           headerShown: false,
         }}

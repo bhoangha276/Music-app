@@ -7,7 +7,6 @@ import HomePage from "../../screens/Screen_HomePage/HomePage.js";
 import Person from "../../screens/Screen_Person/Person.js";
 import PlayMusic from "../../screens/Screen_Play/Play.js";
 
-
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();

@@ -25,13 +25,6 @@ export default class MusicList extends Component {
                 { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
                 
 
-                { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-
             ]
         }
     }
@@ -92,7 +85,7 @@ export default class MusicList extends Component {
                     </View>
 
                     <View>
-                        <TouchableOpacity style={styles.buttonPlay}>
+                        <TouchableOpacity style={styles.buttonPlay} onPress={() => this.props.navigation.push("PlayMV")}>
                             <Text style={styles.buttonPlayText}>Play</Text>
                         </TouchableOpacity>
                     </View>
