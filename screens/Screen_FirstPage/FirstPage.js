@@ -138,6 +138,7 @@ import ListSong from '../Screen_ListSong/index';
 import Categories from '../Screen_Categories/index';
 import ListMV from '../Screen_ListMV/index';
 import PlayMV from '../Screen_PlayMV/PlayMV';
+import Login from '../Screen_Login/Login';
 
 class FirstPage extends Component {
   constructor(props) {
@@ -196,6 +197,13 @@ const Stack = createNativeStackNavigator();
 function Stacks() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name="FirstPage"
         component={FirstPage}

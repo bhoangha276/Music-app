@@ -15,7 +15,36 @@ import {
 export default class Login extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showPass: true,
+      press: false,
+      id: "",
+      password: "",
+      noti: "",
+    };
   }
+
+  showPass = () => {
+    if (this.state.press == false) {
+      this.setState({ showPass: false, press: true });
+    } else {
+      this.setState({ showPass: true, press: false });
+    }
+  };
+  onLogin = () => {
+    if (this.state.id == "ha" && this.state.password == "123") 
+    {
+      alert('Success!');
+      this.setState({noti: "",});
+      this.props.navigation.navigate("FirstPage");
+    } 
+    else {
+      this.setState({
+        noti: "id and passwrord incorret ",
+      });
+    }
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -31,14 +60,14 @@ export default class Login extends Component {
         </Text>
         <View style={styles.box}>
           <View style={styles.searchInputContainer}>
-            <TextInput placeholder="Your ID..."></TextInput>
+            <TextInput placeholder="Your ID..." onChangeText={(id) => this.setState({ id })}></TextInput>
           </View>
           <View style={styles.searchInputContainer}>
-            <TextInput placeholder="Your password..."></TextInput>
+            <TextInput placeholder="Your password..."  onChangeText={(password) => this.setState({ password })}></TextInput>
           </View>
         </View>
         <View style={styles.box2}>
-          <TouchableOpacity style={styles.textlogin}>
+          <TouchableOpacity style={styles.textlogin} onPress={() => this.onLogin()}>
             <Text style={{ color: "white" }}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.textRegister}>
