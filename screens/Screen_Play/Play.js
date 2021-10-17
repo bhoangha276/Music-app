@@ -8,8 +8,10 @@ import {
   Image,
   StatusBar,
   TouchableOpacity,
+  Touchable,
 } from "react-native";
 import { Audio } from "expo-av";
+import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 
 const SampleTrack = require("../../API/songs/XinDungNhacMay.mp3");
 
@@ -94,16 +96,24 @@ export default function App({ navigation }) {
             ) : (
               <>
                 <View style={{ marginBottom: 30, alignItems: "center" }}>
+                  <TouchableOpacity>
                   <Text style={{ color: "white", fontSize: 20 }}>
-                    Bai Hat: Xin Dung Nac May
+                    Bai Hat: Xin Dung Nhac May
                   </Text>
+                  </TouchableOpacity>
                   <Text style={{ color: "white", fontSize: 20 }}>
                     Ca si: B-Ray x Han Sara
                   </Text>
                 </View>
-                <Button title="Play" color="purple" onPress={PlayAudio} />
-                <View style={{ marginBottom: 20, marginTop: 20 }}></View>
-                <Button title="Pause" color="purple" onPress={PauseAudio} />
+                <View style={{flexDirection:'row',marginTop:50,}}>
+                <TouchableOpacity onPress={PlayAudio}>
+                  <FontAwesome5 name='play' size={30}></FontAwesome5>
+                </TouchableOpacity>
+                <View style={{marginLeft:50,}}></View>
+                <TouchableOpacity onPress={PauseAudio}>
+                  <FontAwesome5 name='pause' size={30}></FontAwesome5>
+                </TouchableOpacity >
+                </View>
               </>
             )}
           </>

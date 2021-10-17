@@ -12,6 +12,7 @@ import {
     ScrollView
 } from 'react-native'
 import dbMVs from '../../API/dbMVs.json';
+import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 
 export default class MusicList extends Component {
     constructor (props)
@@ -72,9 +73,11 @@ export default class MusicList extends Component {
                 <View style={styles.container}>
                     <View style = {StyleSheet.banner}>
                         <TouchableOpacity style={styles.buttonBack} onPress={() => this.props.navigation.goBack()}>
-                            <Text style={styles.buttonBackText}>← Back</Text>
+                        <FontAwesome5 name="home" size={20} color={"white"}>
+                <Text> Home</Text>
+              </FontAwesome5>
                         </TouchableOpacity>
-                        <Image source={{uri: 'https://vtv1.mediacdn.vn/thumb_w/650/2020/7/3/1061332173675372452476431818456362453126714o-1593780823287457624164-crop-1593780866985947628599.jpg'}} style={{width: 420, height: 370}} />
+                        <Image source={{uri: 'https://e.dowload.vn/data/image/2021/04/02/loi-bai-hat-xin-dung-nhac-may-1.jpg'}} style={{width: 400, height: 370}} />
                     </View>
 
                     <View>
@@ -129,9 +132,9 @@ var styles = StyleSheet.create({
         paddingTop: 20
     },
     buttonBack : {
-        paddingLeft: 10,
-        paddingTop: 5,
-        paddingBottom: 5,   
+        paddingLeft: 20,
+        paddingTop: 10,
+        paddingBottom: 10,   
     },
     buttonBackText: {
         color: 'white',
