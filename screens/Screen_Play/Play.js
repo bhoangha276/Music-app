@@ -13,7 +13,7 @@ import { Audio } from "expo-av";
 
 const SampleTrack = require("../../API/songs/XinDungNhacMay.mp3");
 
-export default function App() {
+export default function App({ navigation }) {
   const [Loaded, SetLoaded] = React.useState(false);
   const [Loading, SetLoading] = React.useState(false);
   const sound = React.useRef(new Audio.Sound());
@@ -108,7 +108,7 @@ export default function App() {
             )}
           </>
         )}
-        <TouchableOpacity style={{ marginTop: 100 }}>
+        <TouchableOpacity style={{ marginTop: 100 }} onPress={() => navigation.navigate('ListSong')}>
           <Text style={{ color: "white" }}>Back to List Songs</Text>
         </TouchableOpacity>
       </View>
