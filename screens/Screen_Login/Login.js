@@ -34,8 +34,8 @@ export default class Login extends Component {
     }
   };
   onLogin = () => {
-    if (this.state.id == "ha" && this.state.password == "123") {
-      alert("Success!");
+    if (this.state.id == "" && this.state.password == "") 
+    {
       this.setState({ noti: "" });
       this.props.navigation.navigate("FirstPage");
     } else {

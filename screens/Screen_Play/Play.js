@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { Audio } from "expo-av";
 
-const SampleTrack = require("../Screen_Play/beliver.mp3");
+const SampleTrack = require("../../API/songs/XinDungNhacMay.mp3");
 
 export default function App() {
   const [Loaded, SetLoaded] = React.useState(false);

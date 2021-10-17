@@ -11,21 +11,14 @@ import {
     FlatList,
     ScrollView
 } from 'react-native'
+import dbMVs from '../../API/dbMVs.json';
 
 export default class MusicList extends Component {
     constructor (props)
     {
         super(props);
         this.state = {
-            data: [
-                { id: 1, name: 'music 1', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB6nRuFhxJbvSMfBLZAdZGIZWUEbUVWdPN4z2oFCdltF4ozhq_&s' },
-                { id: 2, name: 'music 2', image: 'https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE' },
-                { id: 3, name: 'music 3', image: 'https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg' },
-                { id: 4, name: 'music 4', image: 'https://images.saymedia-content.com/.image/t_share/MTc4NzcyMTMzODg1NzgxNTEx/10-reasons-why-i-love-music.jpg' },
-                { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                
-
-            ]
+            dbMVs
         }
     }
 
@@ -35,7 +28,7 @@ export default class MusicList extends Component {
                 <Image style={styles.imageList} source={{ uri: item.image}}></Image>
                 <View style={styles.infor}>
                     <Text style={styles.buttonListTextName}>{item.name}</Text>
-                    <Text style={styles.buttonListTextSingle}>{item.id}</Text>
+                    <Text style={styles.buttonListTextSingle}>{item.single}</Text>
                 </View>
             </TouchableOpacity>
         )
@@ -46,7 +39,7 @@ export default class MusicList extends Component {
                 <Image style={styles.imageList} source={{ uri: item.image}}></Image>
                 <View style={styles.infor}>
                     <Text style={styles.buttonListTextName}>{item.name}</Text>
-                    <Text style={styles.buttonListTextSingle}>{item.id}</Text>
+                    <Text style={styles.buttonListTextSingle}>{item.single}</Text>
                 </View>
             </TouchableOpacity>
         )
@@ -94,7 +87,7 @@ export default class MusicList extends Component {
                     {/* {renderButton} */}
                         <Text style={styles.titleMV}>Top MV</Text>
                         <FlatList style={styles.flatList}
-                            data={this.state.data}
+                            data={this.state.dbMVs}
                             renderItem={this.renderItem} 
                             keyExtractor={item => item.id}
                             horizontal={true}
@@ -103,7 +96,7 @@ export default class MusicList extends Component {
 
                         <Text style={styles.titleMV}>New</Text>
                         <FlatList style={styles.flatList}
-                            data={this.state.data}
+                            data={this.state.dbMVs}
                             renderItem={this.renderItem} 
                             keyExtractor={item => item.id}
                             horizontal={true}
@@ -112,7 +105,7 @@ export default class MusicList extends Component {
 
                         <Text style={styles.titleMV}>For you</Text>
                         <FlatList
-                            data={this.state.data}
+                            data={this.state.dbMVs}
                             renderItem={this.renderItemP} 
                             keyExtractor={item => item.id}
                             // numColumns={2}

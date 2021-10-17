@@ -12,20 +12,25 @@ import {
   ImageBackground,
   FlatList,
 } from "react-native";
-
+import dbCategories from '../../API/dbCategories.json';
+import dbSongs from '../../API/dbSongs.json';
+import dbMVs from '../../API/dbMVs.json'
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-          { id: 1, name: 'music 1', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB6nRuFhxJbvSMfBLZAdZGIZWUEbUVWdPN4z2oFCdltF4ozhq_&s' },
-          { id: 2, name: 'music 2', image: 'https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE' },
-          { id: 3, name: 'music 3', image: 'https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg' },
-          { id: 4, name: 'music 4', image: 'https://images.saymedia-content.com/.image/t_share/MTc4NzcyMTMzODg1NzgxNTEx/10-reasons-why-i-love-music.jpg' },
-          { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
+      dbCategories,
+      dbSongs,
+      dbMVs
+      // data: [
+      //     { id: 1, name: 'music 1', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB6nRuFhxJbvSMfBLZAdZGIZWUEbUVWdPN4z2oFCdltF4ozhq_&s' },
+      //     { id: 2, name: 'music 2', image: 'https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE' },
+      //     { id: 3, name: 'music 3', image: 'https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg' },
+      //     { id: 4, name: 'music 4', image: 'https://images.saymedia-content.com/.image/t_share/MTc4NzcyMTMzODg1NzgxNTEx/10-reasons-why-i-love-music.jpg' },
+      //     { id: 5, name: 'music 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
   
-      ]
+      // ]
     }
   }
   renderCategories({item}) {
@@ -109,15 +114,15 @@ export default class HomePage extends Component {
               borderRadius: 50,
             }}
           >
-            <TouchableOpacity style={styles.textPlaynow}>
+            <TouchableOpacity style={styles.textPlaynow} onPress={() => this.props.navigation.push("PlayMV")}>
               <Text>Play now</Text>
             </TouchableOpacity>
           </ImageBackground>
           <TouchableOpacity onPress={() => this.props.navigation.push("Categories")}>
             <Text style={styles.title}>Categories</Text>
           </TouchableOpacity>
-          <FlatList
-                        data={this.state.data}
+          <FlatList style={{marginRight: 12}}
+                        data={this.state.dbCategories}
                         renderItem={this.renderCategories} 
                         keyExtractor={item => item.id}
                         horizontal={true}
@@ -178,8 +183,8 @@ export default class HomePage extends Component {
           <TouchableOpacity onPress={() => this.props.navigation.push("ListMV")}>
             <Text style={styles.title}>MVs</Text>
           </TouchableOpacity>
-          <FlatList
-                        data={this.state.data}
+          <FlatList style={{marginRight: 12}}
+                        data={this.state.dbMVs}
                         renderItem={this.renderMVs} 
                         keyExtractor={item => item.id}
                         horizontal={true}

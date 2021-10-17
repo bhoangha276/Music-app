@@ -11,25 +11,15 @@ import {
     FlatList,
     ScrollView
 } from 'react-native'
-
+import dbCategories from '../../API/dbCategories.json';
+import dbTheme from '../../API/dbTheme.json';
 export default class Categories extends Component {
     constructor (props)
     {
         super(props);
         this.state = {
-            data: [
-                { id: 1, name: 'Theme 1', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB6nRuFhxJbvSMfBLZAdZGIZWUEbUVWdPN4z2oFCdltF4ozhq_&s' },
-                { id: 2, name: 'Theme 2', image: 'https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE' },
-                { id: 3, name: 'Theme 3', image: 'https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg' },
-                { id: 4, name: 'Theme 4', image: 'https://images.saymedia-content.com/.image/t_share/MTc4NzcyMTMzODg1NzgxNTEx/10-reasons-why-i-love-music.jpg' },
-                { id: 5, name: 'Theme 5', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                
-                { id: 6, name: 'Theme 6', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                { id: 7, name: 'Theme 7', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-                { id: 8, name: 'Theme 8', image: 'https://static-s.aa-cdn.net/img/ios/1483884129/6b5ad591f81f6b4ce6d78aa4796f8833' },
-
-                
-            ]
+            dbCategories,
+            dbTheme,
         }
     }
 
@@ -58,20 +48,20 @@ export default class Categories extends Component {
                         <TouchableOpacity style={styles.buttonBack} onPress={() => this.props.navigation.goBack()}>
                             <Text style={styles.buttonBackText}>← Back</Text>
                         </TouchableOpacity>
-                        <Image source={{uri: 'https://khodohoa.vn/wp-content/uploads/2018/02/music-07.jpg'}} style={{width: 420, height: 150}} />
+                        <Image source={{uri: 'https://khodohoa.vn/wp-content/uploads/2018/02/music-07.jpg'}} style={{width: 420, height: 200}} />
                     </View>
 
-                    <View>
+                    {/* <View>
                         <TouchableOpacity style={styles.buttonPlay}>
                             <Text style={styles.buttonPlayText}>Play</Text>
                         </TouchableOpacity>
-                    </View>
+                    </View> */}
 
                     <View style={styles.list}>
                     {/* {renderButton} */}
                         <Text style={styles.titleTheme}>Theme</Text>
                         <FlatList
-                            data={this.state.data}
+                            data={this.state.dbTheme}
                             renderItem={this.renderItem} 
                             keyExtractor={item => item.id}
                             numColumns={2}
@@ -79,7 +69,7 @@ export default class Categories extends Component {
 
                         <Text style={styles.titleTheme}>Categories</Text>
                         <FlatList
-                            data={this.state.data}
+                            data={this.state.dbCategories}
                             renderItem={this.renderItem} 
                             keyExtractor={item => item.id}
                             numColumns={2}
