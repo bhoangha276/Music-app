@@ -141,6 +141,7 @@ import PlayMV from '../Screen_PlayMV/PlayMV';
 import Login from '../Screen_Login/Login';
 import InforSong from '../Screen_InforSong';
 import Single from '../Screen_Single';
+import Single2 from '../Screen_Single2';
 
 class FirstPage extends Component {
   constructor(props) {
@@ -258,6 +259,13 @@ function Stacks() {
       <Stack.Screen
         name="Single"
         component={Single}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Single2"
+        component={Single2}
         options={{
           headerShown: false,
         }}

@@ -153,6 +153,7 @@ var styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonListText: {
+    color:'white',
     marginLeft: 220,
     width: 300,
   },

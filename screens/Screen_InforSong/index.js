@@ -44,7 +44,7 @@ export default class InforSong extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonList}>
+          <TouchableOpacity style={styles.buttonList} onPress={() => this.props.navigation.push("Single2")}>
             <Image style={{width: "15%",height: "100%",borderRadius: 50,}} source={{ uri: 'https://static1.bestie.vn/Mlog/ImageContent/201908/dan-mang-cham-cham-so-sanh-nguc-han-sara-va-kay-tran-trong-mv-moi-df4a26.jpg' }}></Image>
             <View style={styles.infor}>
               <Text style={styles.buttonListText}>Han Sara</Text>

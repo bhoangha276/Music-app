@@ -34,7 +34,7 @@ export default class Login extends Component {
     }
   };
   onLogin = () => {
-    if (this.state.id == "" && this.state.password == "") 
+    if (this.state.id == "admin" && this.state.password == "123") 
     {
       this.setState({ noti: "" });
       this.props.navigation.navigate("FirstPage");
@@ -125,9 +125,10 @@ var styles = StyleSheet.create({
     height: "15%",
   },
   btnEye: {
+    // backgroundColor:'orange',
     position: "absolute",
-    marginTop: 70,
-    paddingLeft: 250,
+    marginTop: 64,
+    left: 330,
   },
   box2: {
     flex: 1,

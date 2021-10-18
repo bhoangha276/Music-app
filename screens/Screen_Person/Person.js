@@ -89,7 +89,7 @@ export default class Person extends Component {
                   color: "white",
                   marginTop: 15,
                   marginBottom: 10,
-                  marginLeft: 10,
+                  marginLeft: 15,
                   fontSize: 30,
                   fontWeight: "bold",
                 }}
@@ -159,6 +159,8 @@ var styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   content: {
+    marginLeft:15,
+    marginRight:15,
     flex: 1,
     flexDirection: "row",
     marginTop: 20,
@@ -190,7 +192,7 @@ var styles = StyleSheet.create({
   history: {
     flex: 1,
     flexDirection: "row",
-    marginLeft: 10,
+    marginLeft: 15,
     marginBottom:20,
   },
 });

@@ -27,6 +27,7 @@ export default class MusicList extends Component {
         return(
             <TouchableOpacity style={styles.buttonList}>
                 <Image style={styles.imageList} source={{ uri: item.image}}></Image>
+                <Text style={{fontSize:30, color:'white', position:'absolute', marginLeft:15}}>#{item.id}</Text>
                 <View style={styles.infor}>
                     <Text style={styles.buttonListTextName}>{item.name}</Text>
                     <Text style={styles.buttonListTextSingle}>{item.single}</Text>
