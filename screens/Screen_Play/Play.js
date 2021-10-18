@@ -96,7 +96,7 @@ export default function App({ navigation }) {
             ) : (
               <>
                 <View style={{ marginBottom: 30, alignItems: "center" }}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => navigation.navigate('InforSong')}>
                   <Text style={{ color: "white", fontSize: 20 }}>
                     Bai Hat: Xin Dung Nhac May
                   </Text>

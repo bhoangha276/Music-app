@@ -139,6 +139,8 @@ import Categories from '../Screen_Categories/index';
 import ListMV from '../Screen_ListMV/index';
 import PlayMV from '../Screen_PlayMV/PlayMV';
 import Login from '../Screen_Login/Login';
+import InforSong from '../Screen_InforSong';
+import Single from '../Screen_Single';
 
 class FirstPage extends Component {
   constructor(props) {
@@ -235,6 +237,27 @@ function Stacks() {
       <Stack.Screen
         name="ListMV"
         component={ListMV}
+        options={{
+          headerShown: false,
+        }}
+      />
+        <Stack.Screen 
+        name="InforSong"
+        component={InforSong}
+        options={{
+          title: 'Infor Song',
+          headerStyle: {
+            backgroundColor: '#42275a',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Single"
+        component={Single}
         options={{
           headerShown: false,
         }}
